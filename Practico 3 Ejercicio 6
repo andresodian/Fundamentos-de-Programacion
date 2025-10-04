@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    double x, suma = 0.0;
+
+    printf("Ingrese el valor de x (número real): ");
+    scanf("%lf", &x);
+
+    printf("Ingrese el valor de n (número entero): ");
+    scanf("%d", &n);
+
+    double termino = x;  // El primer término es x^1
+
+    for (int i = 1; i <= n; i++) {
+        suma += termino;
+        termino *= x;  // Multiplicamos el término actual por x para obtener el siguiente término
+    }
+
+    printf("El resultado de la serie es: %.2f\n", suma);
+
+    return 0;
+}
