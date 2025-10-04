@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+ int main(){
+ int num, resto, suma = 0;
+ printf("Ingrese un numero entero: ");
+ scanf("%d",&num);
+
+ num = abs(num);
+
+ while (num > 0) {         // "while=mientras" algo ciclico
+    resto = num % 10;
+    suma = suma + resto;
+    num = num / 10;
+ }
+ printf("La suma de digitos es:%d\n", suma);
+ return 0;
+ }
