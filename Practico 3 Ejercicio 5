@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int num;
+    long long producto = 1;
+
+    printf("Ingrese un numero entero N: ");
+    scanf("%d", &num);
+
+    num = abs(num);
+
+    for (int i = 1; i <= num; i++) {
+        producto *= i;
+    }
+
+    printf("El producto de los primeros %d números enteros es: %lld\n", num, producto);
+
+    return 0;
+}
