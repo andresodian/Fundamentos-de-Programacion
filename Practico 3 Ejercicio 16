@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int N, i, esPrimo = 1;
+
+    printf("Ingrese un numero: ");
+    scanf("%d", &N);
+
+    if (N <= 1) {
+        esPrimo = 0;
+    } else {
+        for (i = 2; i <= N / 2; i++) {
+            if (N % i == 0) {
+                esPrimo = 0;
+            }
+        }
+    }
+
+    if (esPrimo == 1) {
+        printf("El numero %d es primo.\n", N);
+    } else {
+        printf("El numero %d no es primo.\n", N);
+    }
+
+    return 0;
+}
