@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    int num, suma = 0;
+    printf("Ingrese un numero entero N: ");
+    scanf("%d", &num);
+    num = abs(num);
+    for (int i = 1; i <= num; i++) {
+        suma += i * i;
+    }
+    printf("La suma de los cuadrados de los primeros %d numeros es: %d\n", num, suma);
+
+    return 0;
+}
