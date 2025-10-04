@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int N, C = 0, digito, factor = 1;
+    printf("Ingresa un numero entero: ");
+    scanf("%d", &N);
+
+    if (N < 0) {
+        N = -N;
+    }
+
+    while (N > 0) {
+        digito = N % 10;
+        C += (9 - digito) * factor;
+        N /= 10;
+        factor *= 10;
+    }
+
+    printf("El numero complemento es: %d\n", C);
+
+    return 0;
+}
