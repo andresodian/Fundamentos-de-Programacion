@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+float raizCuadrada(float n) {
+    float x = n;
+    float y = 1;
+    float e = 0.00001;
+
+    if (n < 0) return -1;
+
+    while (x - y > e) {
+        x = (x + y) / 2;
+        y = n / x;
+    }
+    return x;
+}
+
+int main() {
+    float a, b, c;
+    float discriminante, x1, x2;
+
+    printf("Ingrese el valor de a: ");
+    scanf("%f", &a);
+    printf("Ingrese el valor de b: ");
+    scanf("%f", &b);
+    printf("Ingrese el valor de c: ");
+    scanf("%f", &c);
+
+    discriminante = b*b - 4*a*c;
+
+    if (a == 0) {
+        printf("No es una ecuacion cuadratica (a=0).\n");
+    } else {
+        if (discriminante > 0) {
+            float raiz = raizCuadrada(discriminante);
+            if (raiz < 0) {
+                printf("No existen soluciones reales.\n");
+            } else {
+                x1 = (-b + raiz) / (2*a);
+                x2 = (-b - raiz) / (2*a);
+                printf("Las soluciones son: x1 = %.2f y x2 = %.2f\n", x1, x2);
+            }
+        } else if (discriminante == 0) {
+            x1 = -b / (2*a);
+            printf("La ecuacion tiene una sola solucion real: x = %.2f\n", x1);
+        } else {
+            printf("No existen soluciones reales.\n");
+        }
+    }
+
+    return 0;
+}
