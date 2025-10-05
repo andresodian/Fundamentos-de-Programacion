@@ -1,0 +1,57 @@
+#include <stdio.h>
+#define PI 3.14159265
+
+int main() {
+    int opcion;
+    float lado, radio, base, altura, area;
+    char continuar;
+
+    do {
+        printf("\n--- Calculo de Areas ---\n");
+        printf("1. Cuadrado\n");
+        printf("2. Circulo\n");
+        printf("3. Triangulo\n");
+        printf("4. Salir\n");
+        printf("Seleccione una opcion: ");
+        scanf("%d", &opcion);
+
+        switch(opcion) {
+            case 1:
+                printf("Ingrese el lado del cuadrado: ");
+                scanf("%f", &lado);
+                area = lado * lado;
+                printf("Area del cuadrado: %.2f\n", area);
+                break;
+
+            case 2:
+                printf("Ingrese el radio del circulo: ");
+                scanf("%f", &radio);
+                area = PI * radio * radio;
+                printf("Area del circulo: %.2f\n", area);
+                break;
+
+            case 3:
+                printf("Ingrese la base del triangulo: ");
+                scanf("%f", &base);
+                printf("Ingrese la altura del triangulo: ");
+                scanf("%f", &altura);
+                area = (base * altura) / 2;
+                printf("Area del triangulo: %.2f\n", area);
+                break;
+
+            case 4:
+                printf("Saliendo del programa.\n");
+                return 0;
+
+            default:
+                printf("Opcion invalida. Intente de nuevo.\n");
+        }
+
+        printf("\nDesea calcular otra area? (s/n): ");
+        scanf(" %c", &continuar);
+
+    } while(continuar == 's' || continuar == 'S');
+
+    printf("\nPrograma finalizado.\n");
+    return 0;
+}
