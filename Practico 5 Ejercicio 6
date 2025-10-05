@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+float raizCuadrada(float n) {
+    float x = n;
+    float y = 1;
+    float e = 0.00001;
+
+    if (n < 0) return -1;
+
+    while (x - y > e) {
+        x = (x + y) / 2;
+        y = n / x;
+    }
+    return x;
+}
+
+int main() {
+    float a, b, c;
+    float discriminante, x1, x2, real, imag;
+
+    printf("Ingrese a, b, c: ");
+    scanf("%f %f %f", &a, &b, &c);
+
+    if (a == 0) {
+        if (b == 0) {
+            if (c == 0) {
+                printf("La ecuacion tiene infinitas soluciones.\n");
+            } else {
+                printf("La ecuacion no tiene solucion.\n");
+            }
+        } else {
+            x1 = -c / b;
+            printf("Es una ecuacion lineal. Solucion: x = %.2f\n", x1);
+        }
+    } else {
+        discriminante = b*b - 4*a*c;
+
+        if (discriminante > 0) {
+            float raiz = raizCuadrada(discriminante);
+            x1 = (-b + raiz) / (2*a);
+            x2 = (-b - raiz) / (2*a);
+            printf("Dos soluciones reales: x1 = %.2f y x2 = %.2f\n", x1, x2);
+        } else if (discriminante == 0) {
+            x1 = -b / (2*a);
+            printf("Una solucion real doble: x = %.2f\n", x1);
+        } else {
+            real = -b / (2*a);
+            imag = raizCuadrada(-discriminante) / (2*a);
+            printf("Dos soluciones complejas: x1 = %.2f + %.2fi, x2 = %.2f - %.2fi\n",
+                   real, imag, real, imag);
+        }
+    }
+
+    return 0;
+}
