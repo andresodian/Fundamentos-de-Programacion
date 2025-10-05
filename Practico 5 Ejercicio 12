@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main() {
+    float parcial1, parcial2, practico, examenFinal, notaFinal;
+    int faltas;
+    char continuar;
+
+    do {
+        printf("\n--- Calculo de Nota Final ---\n");
+
+        printf("Ingrese nota del Parcial 1 (0-100): ");
+        scanf("%f", &parcial1);
+
+        printf("Ingrese nota del Parcial 2 (0-100): ");
+        scanf("%f", &parcial2);
+
+        printf("Ingrese nota del Examen Practico (0-100): ");
+        scanf("%f", &practico);
+
+        printf("Ingrese nota del Examen Final (0-100): ");
+        scanf("%f", &examenFinal);
+
+        printf("Ingrese numero de faltas: ");
+        scanf("%d", &faltas);
+
+        if (faltas > (48 * 0.20)) {
+            printf("El estudiante excedio el 20%% de inasistencias. Examen final anulado.\n");
+            examenFinal = 0;
+        }
+
+        notaFinal = ((parcial1 + parcial2) / 2) * 0.40
+                  + practico * 0.20
+                  + examenFinal * 0.40;
+
+        printf("Nota Final: %.2f\n", notaFinal);
+
+        if (notaFinal >= 51)
+            printf("Estado: APROBADO\n");
+        else
+            printf("Estado: REPROBADO\n");
+
+        printf("\n¿Desea ingresar otro alumno? (s/n): ");
+        scanf(" %c", &continuar);
+
+    } while (continuar == 's' || continuar == 'S');
+
+    printf("\nPrograma finalizado.\n");
+    return 0;
+}
