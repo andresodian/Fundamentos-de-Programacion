@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+bool esBisiesto(int año) {
+    return (año % 4 == 0 && año % 100 != 0) || (año % 400 == 0);
+}
+
+int diasEnMes(int mes, int año) {
+    int dias[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    if(mes == 2 && esBisiesto(año)) return 29;
+    return dias[mes-1];
+}
+
+int diasDesdeInicio(int dia, int mes, int año) {
+    int total = 0;
+    for(int m = 1; m < mes; m++) {
+        total += diasEnMes(m, año);
+    }
+    total += dia;
+    return total;
+}
+
+int diferenciaDias(int dia1, int mes1, int año1, int dia2, int mes2, int año2) {
+    int dias1 = 0, dias2 = 0;
+    
+    for(int a = 1; a < año1; a++) {
+        dias1 += esBisiesto(a) ? 366 : 365;
+    }
+    dias1 += diasDesdeInicio(dia1, mes1, año1);
+    
+    for(int a = 1; a < año2; a++) {
+        dias2 += esBisiesto(a) ? 366 : 365;
+    }
+    dias2 += diasDesdeInicio(dia2, mes2, año2);
+    
+    return abs(dias2 - dias1);
+}
+
+int main() {
+    int dia1, mes1, año1, dia2, mes2, año2;
+    
+    cout << "Ingrese primera fecha (dia mes año): ";
+    cin >> dia1 >> mes1 >> año1;
+    cout << "Ingrese segunda fecha (dia mes año): ";
+    cin >> dia2 >> mes2 >> año2;
+    
+    int dias = diferenciaDias(dia1, mes1, año1, dia2, mes2, año2);
+    cout << "Dias transcurridos: " << dias << endl;
+    
+    return 0;
+}
