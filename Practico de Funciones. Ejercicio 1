@@ -1,0 +1,18 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double POTEN(double x, double y) {
+return pow(x, y);
+}
+
+int main() {
+double base, exponente;
+cout << "Ingrese la base: ";
+cin >> base;
+cout << "Ingrese el exponente: ";
+cin >> exponente;
+double resultado = POTEN(base, exponente);
+cout << "El resultado de " << base << "^" << exponente << " es: " << resultado << endl;
+return 0;
+}
