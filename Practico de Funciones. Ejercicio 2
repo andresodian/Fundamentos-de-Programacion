@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+long long FAC(int n) {
+long long f = 1;
+for (int i = 1; i <= n; i++) {
+f *= i;
+}
+return f;
+}
+
+int main() {
+int num;
+cout << "Ingrese un numero entero: ";
+cin >> num;
+cout << "El factorial de " << num << " es: " << FAC(num) << endl;
+return 0;
+}
