@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+void SISTEMA(double A, double B, double C, double D, double E, double F, double &X, double &Y) {
+double det = A * E - B * D;
+if (det != 0) {
+X = (B * F - C * E) / det;
+Y = (C * D - A * F) / det;
+} else {
+X = Y = 0;
+}
+}
+
+int main() {
+double A, B, C, D, E, F, X, Y;
+cout << "Ingrese A, B, C, D, E, F: ";
+cin >> A >> B >> C >> D >> E >> F;
+SISTEMA(A, B, C, D, E, F, X, Y);
+cout << "X = " << X << ", Y = " << Y << endl;
+return 0;
+}
