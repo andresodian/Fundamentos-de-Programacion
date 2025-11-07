@@ -1,0 +1,73 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string unidades[] = {"", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"};
+string decenas[] = {"", "diez", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"};
+string especiales[] = {"diez", "once", "doce", "trece", "catorce", "quince", "dieciseis", "diecisiete", "dieciocho", "diecinueve"};
+string centenas[] = {"", "ciento", "doscientos", "trescientos", "cuatrocientos", "quinientos", "seiscientos", "setecientos", "ochocientos", "novecientos"};
+
+string convertirGrupo(int numero) {
+    if(numero == 0) return "";
+    
+    string resultado = "";
+    int c = numero / 100;
+    int d = (numero % 100) / 10;
+    int u = numero % 10;
+    
+    if(c > 0) {
+        if(numero == 100) return "cien";
+        resultado += centenas[c] + " ";
+    }
+    
+    if(d > 0) {
+        if(d == 1) {
+            resultado += especiales[u] + " ";
+            return resultado;
+        } else {
+            resultado += decenas[d] + " ";
+            if(u > 0) resultado += "y ";
+        }
+    }
+    
+    if(u > 0) {
+        resultado += unidades[u] + " ";
+    }
+    
+    return resultado;
+}
+
+string convertirReal(double numero) {
+    int parteEntera = (int)numero;
+    int decimal = (int)((numero - parteEntera) * 100 + 0.5);
+    
+    string resultado = "";
+    
+    if(parteEntera == 0) {
+        resultado = "cero ";
+    } else {
+        int miles = parteEntera / 1000;
+        int resto = parteEntera % 1000;
+        
+        if(miles > 0) {
+            if(miles == 1) resultado = "mil ";
+            else resultado = convertirGrupo(miles) + "mil ";
+        }
+        
+        resultado += convertirGrupo(resto);
+    }
+    
+    resultado += to_string(decimal) + "/100 bolivianos";
+    return resultado;
+}
+
+int main() {
+    double numero;
+    cout << "Ingrese un numero real: ";
+    cin >> numero;
+    
+    string literal = convertirReal(numero);
+    cout << literal << endl;
+    
+    return 0;
+}
