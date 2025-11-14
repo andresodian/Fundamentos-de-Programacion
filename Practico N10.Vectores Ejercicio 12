@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ingrese la cantidad de elementos: ";
+    cin >> n;
+
+    double vec[n];
+    cout << "Ingrese los valores:" << endl;
+    for (int i = 0; i < n; i++) {
+        cin >> vec[i];
+    }
+
+    int nuevoTamaño = 0;
+    double vecUnico[n];
+
+    for (int i = 0; i < n; i++) {
+        bool duplicado = false;
+        for (int j = 0; j < nuevoTamaño; j++) {
+            if (vec[i] == vecUnico[j]) {
+                duplicado = true;
+                break;
+            }
+        }
+        if (!duplicado) {
+            vecUnico[nuevoTamaño++] = vec[i];
+        }
+    }
+
+    cout << "Vector sin duplicados:" << endl;
+    for (int i = 0; i < nuevoTamaño; i++) {
+        cout << vecUnico[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
