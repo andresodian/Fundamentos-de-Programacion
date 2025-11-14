@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ingrese la cantidad de elementos: ";
+    cin >> n;
+
+    double vec[n];
+
+    cout << "Ingrese los valores:" << endl;
+    for (int i = 0; i < n; i++) {
+        cin >> vec[i];
+    }
+
+    double minimo = vec[0];
+
+    for (int i = 1; i < n; i++) {
+        if (vec[i] < minimo) {
+            minimo = vec[i];
+        }
+    }
+
+    cout << "El valor minimo del vector es: " << minimo << endl;
+
+    return 0;
+}
