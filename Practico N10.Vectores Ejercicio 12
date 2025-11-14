@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main() {
@@ -6,33 +7,33 @@ int main() {
     cout << "Ingrese la cantidad de elementos: ";
     cin >> n;
 
-    double vec[n];
+    vector<double> vec(n);
     cout << "Ingrese los valores:" << endl;
     for (int i = 0; i < n; i++) {
         cin >> vec[i];
     }
 
-    int nuevoTamaño = 0;
-    double vecUnico[n];
+    vector<double> vecUnico;
 
     for (int i = 0; i < n; i++) {
         bool duplicado = false;
-        for (int j = 0; j < nuevoTamaño; j++) {
+        for (int j = 0; j < vecUnico.size(); j++) {
             if (vec[i] == vecUnico[j]) {
                 duplicado = true;
                 break;
             }
         }
         if (!duplicado) {
-            vecUnico[nuevoTamaño++] = vec[i];
+            vecUnico.push_back(vec[i]);
         }
     }
 
     cout << "Vector sin duplicados:" << endl;
-    for (int i = 0; i < nuevoTamaño; i++) {
+    for (int i = 0; i < vecUnico.size(); i++) {
         cout << vecUnico[i] << " ";
     }
     cout << endl;
 
     return 0;
 }
+
