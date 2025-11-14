@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, m;
+    cout << "Ingrese la cantidad de elementos del primer vector: ";
+    cin >> n;
+    cout << "Ingrese la cantidad de elementos del segundo vector: ";
+    cin >> m;
+
+    double vecA[n], vecB[m], vecC[n + m];
+
+    cout << "Ingrese los valores del primer vector:" << endl;
+    for (int i = 0; i < n; i++) {
+        cin >> vecA[i];
+    }
+
+    cout << "Ingrese los valores del segundo vector:" << endl;
+    for (int i = 0; i < m; i++) {
+        cin >> vecB[i];
+    }
+
+    for (int i = 0; i < n; i++) {
+        vecC[i] = vecA[i];
+    }
+
+    for (int i = 0; i < m; i++) {
+        vecC[n + i] = vecB[i];
+    }
+
+    cout << "Vector concatenado:" << endl;
+    for (int i = 0; i < n + m; i++) {
+        cout << vecC[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
