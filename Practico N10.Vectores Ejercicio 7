@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ingrese un numero: ";
+    cin >> n;
+
+    string literal;
+
+    if (n == 0) literal = "Cero";
+    else if (n == 1) literal = "Uno";
+    else if (n == 2) literal = "Dos";
+    else if (n == 3) literal = "Tres";
+    else if (n == 4) literal = "Cuatro";
+    else if (n == 5) literal = "Cinco";
+    else if (n == 6) literal = "Seis";
+    else if (n == 7) literal = "Siete";
+    else if (n == 8) literal = "Ocho";
+    else if (n == 9) literal = "Nueve";
+    else if (n == 10) literal = "Diez";
+    else if (n == 11) literal = "Once";
+    else if (n == 12) literal = "Doce";
+    else if (n == 13) literal = "Trece";
+    else if (n == 14) literal = "Catorce";
+    else if (n == 15) literal = "Quince";
+    else if (n == 16) literal = "Dieciseis";
+    else if (n == 17) literal = "Diecisiete";
+    else if (n == 18) literal = "Dieciocho";
+    else if (n == 19) literal = "Diecinueve";
+    else if (n == 20) literal = "Veinte";
+    else literal = "Fuera de rango";
+
+    cout << literal << endl;
+
+    return 0;
+}
+
+//
+Si se podria generalizar para los demas numeros de 20 en adelante pero en ese caso seria mucho mejor cabiar lo hecho con else if y en ahora trabajarlo con arreglos,descomponiendo el numero en unidades,decenas y centenas.
