@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string BorraCaracterDeCadena(string texto, char c) {
+    string resultado = "";
+    for (int i = 0; i < texto.length(); i++) {
+        if (texto[i] != c) {
+            resultado += texto[i];
+        }
+    }
+    return resultado;
+}
+
+int main() {
+    string texto;
+    char c;
+
+    cout << "Ingrese el texto: ";
+    getline(cin, texto);
+    cout << "Que caracter borra?: ";
+    cin >> c;
+
+    string nuevoTexto = BorraCaracterDeCadena(texto, c);
+
+    cout << nuevoTexto << endl;
+
+    return 0;
+}
