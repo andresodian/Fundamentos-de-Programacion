@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+bool EsPalindromo(string texto) {
+    int inicio = 0;
+    int fin = texto.length() - 1;
+
+    while (inicio < fin) {
+        if (texto[inicio] != texto[fin]) {
+            return false;
+        }
+        inicio++;
+        fin--;
+    }
+    return true;
+}
+
+int main() {
+    string texto;
+
+    cout << "Ingrese un texto: ";
+    cin >> texto;
+
+    if (EsPalindromo(texto)) {
+        cout << "true" << endl;
+    } else {
+        cout << "false" << endl;
+    }
+
+    return 0;
+}
