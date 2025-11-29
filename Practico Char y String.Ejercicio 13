@@ -25,9 +25,9 @@ int BuscarSubCadena(string sub, string texto) {
 int main() {
     string texto, sub;
     
-    cout << "Ingrese la cadena principal: ";
+    cout << "Cadena: ";
     cin >> texto;
-    cout << "Ingrese la subcadena a buscar: ";
+    cout << "Subcadena: ";
     cin >> sub;
 
     int posicion = BuscarSubCadena(sub, texto);
