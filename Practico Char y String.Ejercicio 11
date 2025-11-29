@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string SubCadena(string texto, int p, int n) {
+    string resultado = "";
+    int longitud = texto.length();
+
+    for (int i = p - 1; i < longitud && i < p - 1 + n; i++) {
+        resultado += texto[i];
+    }
+
+    return resultado;
+}
+
+int main() {
+    string texto;
+    int p, n;
+
+    cout << "Ingrese la cadena: ";
+    cin >> texto;
+    cout << "Ingrese posicion inicial: ";
+    cin >> p;
+    cout << "Ingrese longitud: ";
+    cin >> n;
+
+    string sub = SubCadena(texto, p, n);
+
+    cout << sub << endl;
+
+    return 0;
+}
