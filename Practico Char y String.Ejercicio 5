@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string cad1, cad2, mezcla;
+
+    cout << "Cadena 1: ";
+    cin >> cad1;
+
+    cout << "Cadena 2: ";
+    cin >> cad2;
+
+    mezcla = cad1 + cad2;
+
+    cout << mezcla << endl;
+
+    return 0;
+}
