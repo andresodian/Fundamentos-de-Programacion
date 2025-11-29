@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+void Codifica(char texto[], int c) {
+    for (int i = 0; texto[i] != '\0'; i++) {
+        if (texto[i] >= 'a' && texto[i] <= 'z') {
+            for (int j = 0; j < c; j++) {
+                texto[i]++;
+                if (texto[i] > 'z') {
+                    texto[i] = 'a';
+                }
+            }
+        } else if (texto[i] >= 'A' && texto[i] <= 'Z') {
+            for (int j = 0; j < c; j++) {
+                texto[i]++;
+                if (texto[i] > 'Z') {
+                    texto[i] = 'A';
+                }
+            }
+        }
+    }
+}
+
+int main() {
+    char texto[100];
+    int c;
+
+    cout << "Ingrese el texto: ";
+    cin.getline(texto, 100);
+    cout << "Ingrese el numero de desplazamiento: ";
+    cin >> c;
+
+    Codifica(texto, c);
+
+    cout << texto << endl;
+
+    return 0;
+}
