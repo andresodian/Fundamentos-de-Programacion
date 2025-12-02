@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+int main () {
+
+    int pizza, pimiento = 1, tofu = 2, peperoni = 2, jamon = 3, salmon = 4, ingredientev, ingrediente, cantidad = 0, i = 1;
+   cout<<"¿Cuantas pizzas desea pedir?"<<endl;
+   cin>>cantidad;
+   for (int i = 1; i <= cantidad; i++) {
+    cout<<"***** MENU*****"<<endl;
+    cout<<"1.Pizza Vegetariana"<<endl;
+    cout<<"2.Pizza No Vegetariana"<<endl;
+    cout<<endl<<"Elija el tipo de pizza que desea: ";
+    cin>>pizza;
+    if(pizza==1){
+            cout<<"*****INGREDIENTES*****"<<endl;
+            cout<<endl<<"1.Pimiento"<<endl;
+            cout<<endl<<"2.Tofu"<<endl<<endl;
+            cout<<"Elija un ingrediente para su orden:";
+            cin>>ingredientev;
+    }
+    else{
+            if(pizza==2){
+            cout<<"*****INGREDIENTES*****"<<endl;
+            cout<<endl<<"1.Peperoni"<<endl;
+            cout<<endl<<"2.Jamon"<<endl;
+            cout<<endl<<"3.Salmon"<<endl<<endl;
+            cout<<"Elija un ingrediente para su orden:";
+            cin>>ingrediente;
+    }
+    else{
+        cout<<"La opcion elegida es incorrecta"<<endl;
+    }
+    }
+    if(pizza == 1) {
+       cout<<"La pizza que eligio es Vegetariana"<<endl;
+       cout<<"Los ingredientes que contiene son:"<<endl;
+       if(ingredientev == 1){
+        cout<<"-Pimiento"<<endl;
+       }
+       else {
+        if (ingredientev == 2)
+        cout<<"-Tofu"<<endl;
+       }
+    cout<<"-Mozzarella y tomate"<<endl;
+    }
+     if(pizza == 2) {
+       cout<<"La pizza que eligio es No es Vegetariana"<<endl;
+       cout<<"Los ingredientes que contiene son:"<<endl;
+       if(ingrediente == 1) {
+        cout<<"-Peperoni"<<endl;
+       }
+       else {
+        if (ingrediente == 2) {
+        cout<<"-Jamon"<<endl;
+       }
+       else {
+        if(ingrediente == 3)
+        cout<<"-Salmon"<<endl;
+       }
+     }
+     cout<<"-Mozzarella y tomate"<<endl;
+    }
+   }
+return 0;
+}
