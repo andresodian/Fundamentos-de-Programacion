@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+void restar (int a, int b){
+    int resultado;
+    cout<<"Ingrese dos valores para restar"<<endl;
+    cin>>a;cin>>b;
+    resultado = a - b;
+      cout<<"El resultado de la suma de los dos valores es: "<<resultado;
+
+}
+
+int main () {
+    int a,b;
+    restar(a,b);
+
+return 0;
+}
